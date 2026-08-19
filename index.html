@@ -89,6 +89,37 @@
     font-size: 0.9rem;
     color: var(--muted);
   }
+  .screenshots {
+    margin: 3rem 0;
+  }
+  .screenshots h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0 0 1.25rem;
+  }
+  .screenshot-strip {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem 0 1rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+  .screenshot-strip img {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    width: 200px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    display: block;
+  }
+  .screenshot-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0.5rem auto 0;
+    max-width: 480px;
+  }
   footer {
     text-align: center;
     margin-top: 3rem;
@@ -130,6 +161,17 @@
       <h3>Works offline</h3>
       <p>All place data is bundled on your device — no account, no server, nothing to sign up for.</p>
     </div>
+  </div>
+
+  <div class="screenshots">
+    <h2>A look inside</h2>
+    <div class="screenshot-strip">
+      <img src="/assets/screenshots/map.png" alt="Map view showing independent places nearby" loading="lazy">
+      <img src="/assets/screenshots/places.png" alt="List of independent cafés and restaurants" loading="lazy">
+      <img src="/assets/screenshots/place-detail.png" alt="Detail view for a place, showing hours and features" loading="lazy">
+      <img src="/assets/screenshots/route.png" alt="Route discovery screen for finding detours along a trip" loading="lazy">
+    </div>
+    <p class="screenshot-note">Taken from a recent build — small details may still change before launch.</p>
   </div>
 
   <footer>
