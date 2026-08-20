@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kiertotie — Find independent cafés and restaurants in Finland</title>
-<meta name="description" content="Kiertotie helps you discover independently-owned cafés, restaurants, and points of interest in Finland — no chains, no accounts, no tracking.">
+<title>Kiertotie — Löydä riippumattomia kahviloita ja ravintoloita Suomessa</title>
+<meta name="description" content="Kiertotie auttaa löytämään riippumattomia kahviloita, ravintoloita ja nähtävyyksiä Suomessa — ei ketjuja, ei tilejä, ei seurantaa.">
 <link rel="icon" type="image/png" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <style>
@@ -27,6 +27,26 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 3rem 1.25rem 4rem;
+    position: relative;
+  }
+  .lang-toggle {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+  .lang-toggle button {
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--card-bg);
+    border: none;
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+  }
+  .lang-toggle button:hover {
+    text-decoration: underline;
   }
   .hero {
     text-align: center;
@@ -133,52 +153,211 @@
 <body>
 <main>
 
+  <div class="lang-toggle">
+    <button id="lang-toggle-btn" type="button"></button>
+  </div>
+
   <div class="hero">
-    <img src="/assets/icon-512.png" alt="Kiertotie app icon">
+    <img src="/assets/icon-512.png" alt="Kiertotie app icon" data-i18n-alt="hero.iconAlt">
     <h1>Kiertotie</h1>
-    <p class="tagline">Discover independently-owned cafés, restaurants, and places to see in Finland — no chains, no accounts, no tracking.</p>
+    <p class="tagline" data-i18n="hero.tagline">Löydä riippumattomia kahviloita, ravintoloita ja nähtävyyksiä Suomessa — ei ketjuja, ei tilejä, ei seurantaa.</p>
   </div>
 
   <div class="cta">
-    <span class="badge">Coming soon to the App Store</span>
-    <p>Kiertotie is a native iOS app, currently in final preparation for launch.</p>
+    <span class="badge" data-i18n="cta.badge">Tulossa pian App Storeen</span>
+    <p data-i18n="cta.text">Kiertotie on natiivi iOS-sovellus, joka on parhaillaan viimeistelyvaiheessa ennen julkaisua.</p>
   </div>
 
   <div class="features">
     <div class="feature">
-      <h3>Independent only</h3>
-      <p>Chains are filtered out at the data level — every place shown is locally owned.</p>
+      <h3 data-i18n="features.independent.title">Vain riippumattomia</h3>
+      <p data-i18n="features.independent.text">Ketjut suodatetaan pois jo data-tasolla — jokainen näytetty paikka on paikallisessa omistuksessa.</p>
     </div>
     <div class="feature">
-      <h3>Plan a detour</h3>
-      <p>Find independent places along a road trip route, with an estimated extra driving time for each.</p>
+      <h3 data-i18n="features.detour.title">Suunnittele kiertotie</h3>
+      <p data-i18n="features.detour.text">Löydä riippumattomia paikkoja road tripin varrelta, ja näe jokaiselle arvioitu lisäajomatka.</p>
     </div>
     <div class="feature">
-      <h3>Open now</h3>
-      <p>See at a glance whether a place is currently open, based on its posted hours.</p>
+      <h3 data-i18n="features.open.title">Auki juuri nyt</h3>
+      <p data-i18n="features.open.text">Näe heti, onko paikka avoinna, ilmoitettujen aukioloaikojen perusteella.</p>
     </div>
     <div class="feature">
-      <h3>Works offline</h3>
-      <p>All place data is bundled on your device — no account, no server, nothing to sign up for.</p>
+      <h3 data-i18n="features.offline.title">Toimii ilman verkkoyhteyttä</h3>
+      <p data-i18n="features.offline.text">Kaikki paikkatieto on tallennettu laitteellesi — ei tiliä, ei palvelinta, ei mitään rekisteröitävää.</p>
     </div>
   </div>
 
   <div class="screenshots">
-    <h2>A look inside</h2>
+    <h2 data-i18n="screenshots.heading">Silmäys sovellukseen</h2>
     <div class="screenshot-strip">
-      <img src="/assets/screenshots/map.png" alt="Map view showing independent places nearby" loading="lazy">
-      <img src="/assets/screenshots/places.png" alt="List of independent cafés and restaurants" loading="lazy">
-      <img src="/assets/screenshots/place-detail.png" alt="Detail view for a place, showing hours and features" loading="lazy">
-      <img src="/assets/screenshots/route.png" alt="Route discovery screen for finding detours along a trip" loading="lazy">
+      <img src="/assets/screenshots/map.png" data-i18n-alt="screenshots.mapAlt" alt="Karttanäkymä, jossa näkyy lähellä olevia riippumattomia paikkoja" loading="lazy">
+      <img src="/assets/screenshots/places.png" data-i18n-alt="screenshots.placesAlt" alt="Lista riippumattomista kahviloista ja ravintoloista" loading="lazy">
+      <img src="/assets/screenshots/place-detail.png" data-i18n-alt="screenshots.detailAlt" alt="Paikan tiedot: aukioloajat ja ominaisuudet" loading="lazy">
+      <img src="/assets/screenshots/route.png" data-i18n-alt="screenshots.routeAlt" alt="Reittinäkymä kiertoteiden löytämiseen matkan varrelta" loading="lazy">
     </div>
-    <p class="screenshot-note">Taken from a recent build — small details may still change before launch.</p>
+    <p class="screenshot-note" data-i18n="screenshots.note">Kuvakaappaukset tuoreesta versiosta — pienet yksityiskohdat voivat vielä muuttua ennen julkaisua.</p>
   </div>
 
   <footer>
-    <p><a href="/privacy">Privacy Policy</a> &middot; <a href="mailto:support@kiertotie.fi">Support</a> &middot; Place data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> and <a href="https://www.wikidata.org">Wikidata</a> contributors</p>
-    <p style="font-size: 0.78rem; margin-top: 0.5rem;">Place details are community-sourced and may occasionally be outdated or incorrect. Spotted an error? Fix it for everyone on <a href="https://www.openstreetmap.org/">OpenStreetMap</a> — Kiertotie will pick up the update.</p>
+    <p>
+      <a href="/privacy" data-i18n="footer.privacy">Tietosuojakäytäntö</a>
+      &middot;
+      <a href="mailto:support@kiertotie.fi" data-i18n="footer.support">Tuki</a>
+      &middot;
+      <span data-i18n-html="footer.dataCredit">Paikkatieto © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>- ja <a href="https://www.wikidata.org">Wikidata</a>-yhteisöjen jäsenet</span>
+    </p>
+    <p style="font-size: 0.78rem; margin-top: 0.5rem;" data-i18n-html="footer.dataNote">Paikkatiedot ovat yhteisön tuottamia ja voivat toisinaan olla vanhentuneita tai virheellisiä. Huomasitko virheen? Korjaa se kaikkien puolesta <a href="https://www.openstreetmap.org/">OpenStreetMapissa</a> — Kiertotie poimii päivityksen automaattisesti.</p>
   </footer>
 
 </main>
+
+<script>
+(function () {
+  var translations = {
+    fi: {
+      meta: {
+        title: "Kiertotie — Löydä riippumattomia kahviloita ja ravintoloita Suomessa",
+        description: "Kiertotie auttaa löytämään riippumattomia kahviloita, ravintoloita ja nähtävyyksiä Suomessa — ei ketjuja, ei tilejä, ei seurantaa."
+      },
+      hero: {
+        iconAlt: "Kiertotie-sovelluksen kuvake",
+        tagline: "Löydä riippumattomia kahviloita, ravintoloita ja nähtävyyksiä Suomessa — ei ketjuja, ei tilejä, ei seurantaa."
+      },
+      cta: {
+        badge: "Tulossa pian App Storeen",
+        text: "Kiertotie on natiivi iOS-sovellus, joka on parhaillaan viimeistelyvaiheessa ennen julkaisua."
+      },
+      features: {
+        independent: {
+          title: "Vain riippumattomia",
+          text: "Ketjut suodatetaan pois jo data-tasolla — jokainen näytetty paikka on paikallisessa omistuksessa."
+        },
+        detour: {
+          title: "Suunnittele kiertotie",
+          text: "Löydä riippumattomia paikkoja road tripin varrelta, ja näe jokaiselle arvioitu lisäajomatka."
+        },
+        open: {
+          title: "Auki juuri nyt",
+          text: "Näe heti, onko paikka avoinna, ilmoitettujen aukioloaikojen perusteella."
+        },
+        offline: {
+          title: "Toimii ilman verkkoyhteyttä",
+          text: "Kaikki paikkatieto on tallennettu laitteellesi — ei tiliä, ei palvelinta, ei mitään rekisteröitävää."
+        }
+      },
+      screenshots: {
+        heading: "Silmäys sovellukseen",
+        mapAlt: "Karttanäkymä, jossa näkyy lähellä olevia riippumattomia paikkoja",
+        placesAlt: "Lista riippumattomista kahviloista ja ravintoloista",
+        detailAlt: "Paikan tiedot: aukioloajat ja ominaisuudet",
+        routeAlt: "Reittinäkymä kiertoteiden löytämiseen matkan varrelta",
+        note: "Kuvakaappaukset tuoreesta versiosta — pienet yksityiskohdat voivat vielä muuttua ennen julkaisua."
+      },
+      footer: {
+        privacy: "Tietosuojakäytäntö",
+        support: "Tuki",
+        dataCredit: 'Paikkatieto © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>- ja <a href="https://www.wikidata.org">Wikidata</a>-yhteisöjen jäsenet',
+        dataNote: 'Paikkatiedot ovat yhteisön tuottamia ja voivat toisinaan olla vanhentuneita tai virheellisiä. Huomasitko virheen? Korjaa se kaikkien puolesta <a href="https://www.openstreetmap.org/">OpenStreetMapissa</a> — Kiertotie poimii päivityksen automaattisesti.'
+      },
+      toggleLabel: "In English"
+    },
+    en: {
+      meta: {
+        title: "Kiertotie — Find independent cafés and restaurants in Finland",
+        description: "Kiertotie helps you discover independently-owned cafés, restaurants, and points of interest in Finland — no chains, no accounts, no tracking."
+      },
+      hero: {
+        iconAlt: "Kiertotie app icon",
+        tagline: "Discover independently-owned cafés, restaurants, and places to see in Finland — no chains, no accounts, no tracking."
+      },
+      cta: {
+        badge: "Coming soon to the App Store",
+        text: "Kiertotie is a native iOS app, currently in final preparation for launch."
+      },
+      features: {
+        independent: {
+          title: "Independent only",
+          text: "Chains are filtered out at the data level — every place shown is locally owned."
+        },
+        detour: {
+          title: "Plan a detour",
+          text: "Find independent places along a road trip route, with an estimated extra driving time for each."
+        },
+        open: {
+          title: "Open now",
+          text: "See at a glance whether a place is currently open, based on its posted hours."
+        },
+        offline: {
+          title: "Works offline",
+          text: "All place data is bundled on your device — no account, no server, nothing to sign up for."
+        }
+      },
+      screenshots: {
+        heading: "A look inside",
+        mapAlt: "Map view showing independent places nearby",
+        placesAlt: "List of independent cafés and restaurants",
+        detailAlt: "Detail view for a place, showing hours and features",
+        routeAlt: "Route discovery screen for finding detours along a trip",
+        note: "Taken from a recent build — small details may still change before launch."
+      },
+      footer: {
+        privacy: "Privacy Policy",
+        support: "Support",
+        dataCredit: 'Place data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> and <a href="https://www.wikidata.org">Wikidata</a> contributors',
+        dataNote: 'Place details are community-sourced and may occasionally be outdated or incorrect. Spotted an error? Fix it for everyone on <a href="https://www.openstreetmap.org/">OpenStreetMap</a> — Kiertotie will pick up the update.'
+      },
+      toggleLabel: "Suomeksi"
+    }
+  };
+
+  var STORAGE_KEY = "kiertotie-lang";
+
+  function getPreferredLang() {
+    var saved = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (saved === "fi" || saved === "en") return saved;
+    return "fi";
+  }
+
+  function get(obj, path) {
+    return path.split(".").reduce(function (o, key) { return o && o[key]; }, obj);
+  }
+
+  function applyLang(lang) {
+    var t = translations[lang];
+    document.documentElement.lang = lang;
+    document.title = t.meta.title;
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", t.meta.description);
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var value = get(t, el.getAttribute("data-i18n"));
+      if (value != null) el.textContent = value;
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      var value = get(t, el.getAttribute("data-i18n-html"));
+      if (value != null) el.innerHTML = value;
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var value = get(t, el.getAttribute("data-i18n-alt"));
+      if (value != null) el.setAttribute("alt", value);
+    });
+
+    var btn = document.getElementById("lang-toggle-btn");
+    if (btn) btn.textContent = t.toggleLabel;
+
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  var currentLang = getPreferredLang();
+  applyLang(currentLang);
+
+  document.getElementById("lang-toggle-btn").addEventListener("click", function () {
+    currentLang = currentLang === "fi" ? "en" : "fi";
+    applyLang(currentLang);
+  });
+})();
+</script>
+
 </body>
 </html>
